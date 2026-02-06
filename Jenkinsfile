@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout Code') {
-            steps {
-                git 'https://github.com/marslanm1/jenkins-python-project.git'
-            }
-        }
-
         stage('Setup Environment') {
             steps {
                 sh 'python3 -m venv venv'
