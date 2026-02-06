@@ -1,7 +1,18 @@
 pipeline {
     agent any
 
+    environment {
+        PYTHONPATH = "${WORKSPACE}"
+    }
+
     stages {
+
+        stage('Checkout Code') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/marslanm1/jenkins-python-project.git'
+            }
+        }
 
         stage('Setup Environment') {
             steps {
